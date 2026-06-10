@@ -35,8 +35,8 @@ jobs:
         server-id: github
         settings-path: ${{ github.workspace }}
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Build, test, and analyze
+      run: mvn verify
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Publish to Github Packages Apache Maven
